@@ -1,15 +1,5 @@
-// classes
-class Invoice {
-  constructor(
-    readonly client: string,
-    private details: string,
-    public amount: number
-  ){}
+import {Invoice} from "./Classes/Invoice.js";
 
-  format() {
-    return `${this.client} owes ${this.amount} for ${this.details}`;
-  }
-}
 
 // Creating Object
 const invOne = new Invoice("John", "work on web projects", 1740);
@@ -23,11 +13,8 @@ invoices.forEach((inv) => {
   console.log(inv.client, inv.amount, inv.format());
 });
 
-
-
 // form element
 const form = <HTMLFormElement>document.querySelector(".new-item-form");
-
 // input details
 const type = document.querySelector("#type") as HTMLSelectElement;
 const tofrom = document.querySelector("#tofrom") as HTMLInputElement;

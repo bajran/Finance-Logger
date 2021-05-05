@@ -1,33 +1,21 @@
-"use strict";
-// classes
-var Invoice = /** @class */ (function () {
-    function Invoice(client, details, amount) {
-        this.client = client;
-        this.details = details;
-        this.amount = amount;
-    }
-    Invoice.prototype.format = function () {
-        return this.client + " owes " + this.amount + " for " + this.details;
-    };
-    return Invoice;
-}());
+import { Invoice } from "./Classes/Invoice.js";
 // Creating Object
-var invOne = new Invoice("John", "work on web projects", 1740);
-var invTwo = new Invoice("Micheal", "Works on native device", 1400);
-var invoices = [];
+const invOne = new Invoice("John", "work on web projects", 1740);
+const invTwo = new Invoice("Micheal", "Works on native device", 1400);
+let invoices = [];
 invoices.push(invOne);
 invoices.push(invTwo);
-invoices.forEach(function (inv) {
+invoices.forEach((inv) => {
     console.log(inv.client, inv.amount, inv.format());
 });
 // form element
-var form = document.querySelector(".new-item-form");
+const form = document.querySelector(".new-item-form");
 // input details
-var type = document.querySelector("#type");
-var tofrom = document.querySelector("#tofrom");
-var details = document.querySelector("#details");
-var amount = document.querySelector("#amount");
-form.addEventListener("submit", function (e) {
+const type = document.querySelector("#type");
+const tofrom = document.querySelector("#tofrom");
+const details = document.querySelector("#details");
+const amount = document.querySelector("#amount");
+form.addEventListener("submit", (e) => {
     e.preventDefault();
     console.log(type.value);
     console.log(tofrom.value);
