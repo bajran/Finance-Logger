@@ -1,20 +1,25 @@
 "use strict";
-// Classes
+// classes
 var Invoice = /** @class */ (function () {
-    function Invoice(c, d, a) {
-        this.client = c;
-        this.details = d;
-        this.amount = a;
+    function Invoice(client, details, amount) {
+        this.client = client;
+        this.details = details;
+        this.amount = amount;
     }
     Invoice.prototype.format = function () {
-        return this.client + " owes $" + this.amount + " for " + this.details;
+        return this.client + " owes " + this.amount + " for " + this.details;
     };
     return Invoice;
 }());
-var invOne = new Invoice("mario", "work on the mario website", 250);
-var invTwo = new Invoice("luigi", "work on the website", 500);
-console.log(invOne.format());
-console.log(invTwo.format());
+// Creating Object
+var invOne = new Invoice("John", "work on web projects", 1740);
+var invTwo = new Invoice("Micheal", "Works on native device", 1400);
+var invoices = [];
+invoices.push(invOne);
+invoices.push(invTwo);
+invoices.forEach(function (inv) {
+    console.log(inv.client, inv.amount, inv.format());
+});
 // form element
 var form = document.querySelector(".new-item-form");
 // input details
